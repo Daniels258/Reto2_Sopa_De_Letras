@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sopa de letras</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+  <link href="jquery.tagit.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="wordfind.js"></script>
+  <script type="text/javascript" src="wordfindgame.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="jquery-ui.min.js"></script>
+  <script type="text/javascript" src="tag-it.js"></script>
+
+
+</head>
+
+<body>
+  <style media="print">
+    .ocultar {
+      display: none;
+    }
+
+    .col-md-3 {
+      width: 25%;
+      float: left;
+    }
+
+    .col-md-9 {
+      width: 75%;
+      float: left;
+    }
+  </style>
+
+  <div class="container">
+    <div class="row">
+
+      <script type="text/javascript">
+        var mytag;
+        $(document).ready(function () {
+          mytag = $("#myTags").tagit({});
+          Crear();
+        });
+      </script>
+      <div class="row  ocultar text-center">
+        <br />
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>1.- Escribe las palabras, luego presiona el botón <strong>"Crear Juego"</strong></h4>
+          </div>
+          <div class="panel-body">
+            <ul id="myTags">
+              <li>Herramientas</li>
+              <li>Desarrollo</li>
+              <li>Aplicaciones</li>
+              <li>Web</li>
+              <li>GitHub</li>
+              <li>Diseño</li>
+              <li>Grafico</li>
+              <li>Editor</li>
+              <li>Software</li>
+              <li>Código</li>
+              <li>Archivos</li>
+              <li>Plugin</li>
+              <li>Proyectos</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Internet</li>
+              <li>Etiquetas</li>
+              <li>Sección</li>
+              <li>Contenido</li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
+      <div class="row text-center">
+        <div class="ocultar">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Header -->
+          <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
+            data-ad-client="ca-pub-4331617637495482" data-ad-slot="2764029251"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script><br /><br />
+        </div>
+        <div>
+
+          <div class="row">
+
+
+            <div class="panel panel-default">
+              <div class="panel-heading ocultar">
+                <h4>2.- Crea la sopa e imprimela o simplemente resuelvela online</h4>
+              </div>
+              <div class="panel-body">
+                <div class="ocultar">
+                  <button onclick="Crear();" class="btn btn-success btn-lg"> Crear Juego</button>
+                  <button onclick="window.print();" class="btn btn-info btn-lg "> Imprimir</button>
+                  <button id='solve' class="btn btn-danger btn-lg"> Resolver</button>
+                  <!-- <a href="#" class="btn btn-default btn-lg" > Descargar</a>-->
+                </div>
+                <div class="row">
+
+
+                  <div class="col-md-3">
+                    <div id='Palabras'></div>
+
+                  </div>
+                  <div class="col-md-9">
+                    <div id='juego'></div>
+
+                  </div>
+                </div>
+
+
+
+
+
+
+
+              </div>
+
+
+
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+
+          <script>
+            var words = [];
+            var gamePuzzle;
+            function Crear() {
+
+              datos = mytag[0].textContent.trim().split("×");
+
+              for (i = 0; i < (datos.length) - 1; i++) {
+                words.push(datos[i]);
+
+              }
+              $('#Juegos').show();
+              gamePuzzle = wordfindgame.create(datos, '#juego', '#Palabras');
+              var puzzle = wordfind.newPuzzle(datos, { height: 18, width: 18, fillBlanks: false });
+              wordfind.print(puzzle);
+            }
+            $('#solve').click(function () { wordfindgame.solve(gamePuzzle, words); });
+          </script>
+        </div>
+        <div>
+          <footer>
+            <h1>Glosario</h1>
+            <ul>
+              <li><p><h3><strong>Herramientas</strong> Serían todas aquellas aplicaciones alojadas en internet (muchas de
+                  ellas, de código libre y gratuitas) que facilitan todo tipo de trabajos en la red, desde el alojamiento e
+                  intercambio de contenidos en distintos formatos y los códigos que usan para crearlas</h3></p></li>
+
+              <li><p><h3><strong>Desarrollo</strong> Es un término que define la creación de sitios web para Internet o una
+                  intranet. Para conseguirlo se hace uso de tecnologías de software del lado del servidor y del cliente
+                  que involucran una combinación de procesos de base de datos con el uso de un navegador web a fin de
+                  realizar determinadas tareas o mostrar información</h3></p></li>
+
+              <li><p><h3><strong>Aplicaciones</strong> Son aquellas herramientas que los usuarios pueden utilizar accediendo a
+                  un servidor web a través de internet o de una intranet mediante un navegador. En otras palabras, es un
+                  programa que se codifica en un lenguaje interpretable por los navegadores web en la que se confía la
+                  ejecución al navegador</h3></p></li>
+
+              <li><p><h3><strong>Web</strong> Es un documento o información electrónica capaz de contener texto, sonido,
+                  vídeo, programas, enlaces, imágenes, hipervínculos y muchas otras cosas, adaptada para la llamada
+                  World Wide Web (WWW), y que puede ser accedida mediante un navegador web. Esta información se
+                  encuentra generalmente en formato HTML o XHTML, y puede proporcionar acceso a otras páginas web
+                  mediante enlaces de hipertexto. Frecuentemente también incluyen otros recursos como pueden ser hojas
+                  de estilo en cascada, scripts, imágenes digitales, entre otros</h3></p></li>
+
+              <li><p><h3><strong>GitHub</strong> Es un servicio basado en la nube que aloja un sistema de control de versiones
+                  (VCS) llamado Git. Éste permite a los desarrolladores colaborar y realizar cambios en proyectos
+                  compartidos, a la vez que mantienen un seguimiento detallado de su progreso</h3></p></li>
+
+              <li><p><h3>strong>Diseño</strong> Es una actividad que consiste en la planificación, diseño, implementación y
+                  mantenimiento de sitios web. No es simplemente la implementación del diseño convencional ya que se
+                  abarcan diferentes aspectos como el diseño gráfico web, diseño de interfaz y experiencia de usuario,
+                  como la navegabilidad, interactividad, usabilidad, arquitectura de la información; interacción de
+                  medios, entre los que podemos mencionar audio, texto, imagen, enlaces, video y la optimización de
+                  motores de búsqueda. A menudo muchas personas trabajan en equipos que cubren los diferentes aspectos
+                  del proceso de diseño, aunque existen algunos diseñadores independientes que trabajan solos</h3></p></li>
+
+              <li><p><h3><strong>Gráfico</strong> Es todo aquello que comunica un mensaje visual. Así, su máxima es obtener
+                  manifestaciones o mensajes gráficos.Su auge actual se debe a la gran expansión de todo tipo de
+                  mensajes visuales a través de nuestros diversos dispositivos digitales y tecnológicos</h3></p></li>
+
+              <li><p><h3><strong>Editor</strong> Es una aplicación diseñada con el fin de facilitar la creación y edición de
+                  documentos HTML o XHTML. Su complejidad puede variar desde la de un simple editor de texto plano,
+                  entornos WYSIWYG, hasta editores WYSIWYM</h3></p></li>
+
+              <li><p><h3><strong>Software</strong> Es un término informático que hace referencia a un programa o conjunto de
+                  programas de cómputo, así como datos, procedimientos y pautas que permiten realizar distintas tareas
+                  en un sistema informático</h3></p></li>
+
+              <li><p><h3><strong>Código</strong> El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para
+                  estructurar y desplegar una página web y sus contenidos. Por ejemplo, sus contenidos podrían ser
+                  párrafos, una lista con viñetas, o imágenes y tablas de datos</h3></p></li>
+
+              <li><p><h3><strong>Archivos</strong> Cualquier sitio web está formado por un conjunto de archivos y estos
+                  archivos suelen distribuirse en carpetas (directorios). Los archivos pueden pertenecer a código —
+                  HTML, CSS, Javascript, etc. o por ejemplo, a imágenes</h3></p></li>
+
+              <li><p><h3><strong>Plugin</strong> Son complementos que se "enchufan" en la página web y permiten desarrollar
+                  procesos especializados. Han sido especialmente diseñados para sistemas que funcionan en plantillas
+                  madre del tipo: WordPress, Prestashop, Magento, entre otras</h3></p></li>
+
+              <li><p><h3><strong>Proyectos</strong> Los trablajos realizados son los proyectos</h3></p></li>
+
+              <li><p><h3><strong>HTML</strong> Es un lenguaje de marcado que se utiliza para el desarrollo de páginas de
+                  Internet. Se trata de la siglas que corresponden a HyperText Markup Language, es decir, "Lenguaje de
+                  Marcas de Hipertexto”</h3></p></li>
+
+              <li><p><h3><strong>CSS</strong> (hojas de estilo en cascada) es un lenguaje que define la apariencia de un
+                  documento escrito en un lenguaje de marcado (por ejemplo, HTML). Así, a los elementos de la página web
+                  creados con HTML se les dará la apariencia que se desee utilizando CSS: colores, espacios entre
+                  elementos, tipos de letra, separando de esta forma la
+                  estructura de la presentación</h3></p></li>
+
+              <li><p><h3><strong>JavaScript</strong> Es el lenguaje de programación encargado de dotar de mayor
+                  interactividad y dinamismo a las páginas web. Cuando JavaScript se ejecuta en el navegador, no
+                  necesita de un compilador. El navegador lee directamente el código, sin necesidad de terceros. Por
+                  tanto, se le reconoce como uno de los tres lenguajes nativos de la web junto a HTML (contenido y su
+                  estructura) y a CSS (diseño del contenido y su estructura)</h3></p></li>
+
+              <li><p><h3><strong>Internet</strong> Se podría definir como una red global de redes de ordenadores cuya
+                  finalidad es permitir el intercambio libre de información entre todos sus usuarios. Pero sería un
+                  error considerar Internet únicamente como una red de computadoras. Podemos considerar las computadoras
+                  simplemente como el medio que transporta la información</h3></p></li>
+
+              <li><p><h3><strong>Etiquetas</strong> Son aquellas palabras o frases que describen el contenido de tu página web,
+                  independientemente del formato. Las mismas etiquetas pueden añadirse a textos, vídeos, productos o
+                  incluso a fotos. Recomendamos utilizar siempre más de una etiqueta para cada elemento</h3></p></li>
+
+              <li><p><h3><strong>Sección</strong> Es parecido al elemento
+                article, pero se usa más para agrupar cada parte de la página que, por su funcionalidad, constituye
+                  una sección en sí misma (por ejemplo un minimapa o un conjunto de titulares y resúmenes)</h3></p></li>
+
+              <li><p><h3><strong>Contenido</strong> Es más que un río de publicaciones en blogs. Incluye cada pieza de texto o
+                  imagen en un página web. Esto incluye todo desde la copia principal para la información de pie de
+                  página y etiquetas ALT. Cada pedazo de esto es considerado contenido</h3></p></li>
+
+            </ul>
+          </footer>
+        </div>
+</body>
+
+</html>
